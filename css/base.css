@@ -1,0 +1,177 @@
+/* ========================================
+   BASE
+======================================== */
+
+:root {
+    --color-primary: #5dade2;
+    --color-primary-hover: #1f2937;
+    --color-primary-light: #eaf5fc;
+
+    --color-white: #ffffff;
+    --color-background: #f8fafc;
+
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+    --color-text-muted: #9ca3af;
+
+    --color-border: #e5e7eb;
+    --color-danger: #dc2626;
+    --color-success: #15803d;
+
+    --font-primary: "Inter", sans-serif;
+
+    --container-width: 1200px;
+    --section-spacing: 110px;
+
+    --border-radius: 6px;
+    --card-radius: 10px;
+
+    --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.09);
+    --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.18);
+
+    --transition-fast: 200ms ease;
+    --transition-normal: 300ms ease;
+}
+
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    color: var(--color-text);
+    background-color: var(--color-white);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-text);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    color: var(--color-text-light);
+}
+
+
+/* Elements */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+
+/* Layout */
+
+.container {
+    width: min(100% - 40px, var(--container-width));
+    margin-inline: auto;
+}
+
+.section {
+    padding-block: var(--section-spacing);
+}
+
+
+/* Selection */
+
+::selection {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

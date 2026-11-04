@@ -1,0 +1,273 @@
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+
+    :root {
+        --section-spacing: 90px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    :root {
+        --section-spacing: 80px;
+    }
+
+    .container {
+        width: min(100% - 30px, var(--container-width));
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        min-height: 68px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 68px;
+        left: 15px;
+        right: 15px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 15px;
+
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+
+        background-color: var(--color-white);
+
+        box-shadow: var(--shadow-hover);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+
+        transition:
+            opacity var(--transition-normal),
+            visibility var(--transition-normal),
+            transform var(--transition-normal);
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        padding: 12px;
+
+        border-radius: 5px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: var(--color-primary-light);
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero-container {
+        gap: 40px;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .code-content {
+        padding: 20px;
+
+        font-size: 0.75rem;
+    }
+
+
+    /* About */
+
+    .about-content {
+        display: flex;
+        flex-direction: column;
+
+        gap: 30px;
+
+        text-align: center;
+    }
+
+    .about-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+
+    /* Stats */
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+
+        margin-top: 45px;
+    }
+
+    .stat-card {
+        padding: 18px 8px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-card span {
+        font-size: 0.72rem;
+    }
+
+
+    /* Skills */
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+
+    /* Services */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Projects */
+
+    .project-filters {
+        align-items: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Contact */
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+
+
+    /* Modal */
+
+    .modal-overlay {
+        padding: 20px;
+    }
+
+    .modal {
+        max-height: 85vh;
+    }
+
+    .modal-body {
+        padding: 25px 20px;
+    }
+
+
+    /* Back to top */
+
+    #back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+
+/* Very small screens */
+
+@media (max-width: 400px) {
+
+    .stats-grid {
+        gap: 5px;
+    }
+
+    .stat-card {
+        padding-inline: 5px;
+    }
+
+    .stat-number {
+        font-size: 1.3rem;
+    }
+
+    .stat-card span {
+        font-size: 0.65rem;
+    }
+
+    .project-filters {
+        flex-direction: column;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+}

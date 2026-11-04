@@ -1,0 +1,378 @@
+/* ========================================
+   COMPONENTS
+======================================== */
+
+
+/* Buttons */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+    padding: 12px 24px;
+
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.btn-primary {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--shadow-subtle);
+}
+
+.btn-secondary {
+    color: var(--color-primary);
+    background-color: transparent;
+    border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    box-shadow: var(--shadow-subtle);
+}
+
+
+/* Loading */
+
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--color-white);
+
+    transition:
+        opacity 300ms ease,
+        visibility 300ms ease;
+}
+
+.loading-brand {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.loading-brand span {
+    color: var(--color-primary);
+}
+
+.loading-dots {
+    display: flex;
+    gap: 5px;
+    margin-top: 12px;
+}
+
+.loading-dots span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background-color: var(--color-primary);
+
+    animation: loading-dot 1.2s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes loading-dot {
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    30% {
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+}
+
+
+/* Back to top */
+
+#back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 800;
+
+    width: 44px;
+    height: 44px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--color-white);
+    background-color: var(--color-primary);
+
+    font-size: 1.1rem;
+
+    box-shadow: var(--shadow-subtle);
+
+    transition:
+        background-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+#back-to-top.visible {
+    display: flex;
+}
+
+#back-to-top:hover {
+    background-color: var(--color-primary-hover);
+    box-shadow: var(--shadow-hover);
+}
+
+
+/* Reveal */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+
+    transition:
+        opacity 600ms ease,
+        transform 600ms ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Modal */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity var(--transition-normal),
+        visibility var(--transition-normal);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: relative;
+
+    width: min(100%, 800px);
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 12px;
+
+    background-color: var(--color-white);
+
+    box-shadow: var(--shadow-modal);
+
+    transform: translateY(15px);
+
+    transition: transform var(--transition-normal);
+}
+
+.modal-overlay.active .modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    z-index: 2;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--color-text);
+    background-color: rgba(255, 255, 255, 0.9);
+
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    background-color: var(--color-primary-light);
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 400px;
+
+    object-fit: cover;
+}
+
+.modal-body {
+    padding: 32px;
+}
+
+.modal-body h2 {
+    margin-bottom: 12px;
+}
+
+.modal-body p {
+    margin-bottom: 24px;
+}
+
+.modal-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+.tech-tag {
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    color: var(--color-primary);
+    background-color: var(--color-primary-light);
+
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+/* Form errors */
+
+.form-error {
+    display: block;
+
+    min-height: 20px;
+    margin-top: 5px;
+
+    color: var(--color-danger);
+
+    font-size: 0.8rem;
+}
+
+.form-status {
+    min-height: 25px;
+    margin-top: 15px;
+
+    font-size: 0.9rem;
+}
+
+.form-status.success {
+    color: var(--color-success);
+}
+
+.form-status.error {
+    color: var(--color-danger);
+}
+
+
+/* Honeypot */
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+}
+
+
+/* Mobile menu */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    color: var(--color-text);
+    background-color: transparent;
+}
+
+.menu-toggle span {
+    width: 23px;
+    height: 2px;
+
+    background-color: currentColor;
+
+    transition: transform var(--transition-fast);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
