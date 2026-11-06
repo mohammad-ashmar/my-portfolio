@@ -2,38 +2,39 @@
    BASE
 ======================================== */
 
+/* THEME: Neon Cyberpunk — bold, professional dark palette */
 :root {
-    --color-primary: #5dade2;
-    --color-primary-hover: #1f2937;
-    --color-primary-light: #eaf5fc;
+    --color-primary: #B8FF3B;
+    --color-primary-hover: #D1FF75;
+    --color-primary-light: #29391B;
 
-    --color-white: #ffffff;
-    --color-background: #f8fafc;
+    --color-secondary: #A855F7;
+    --color-secondary-hover: #C084FC;
+    --color-accent: #00E5FF;
 
-    --color-text: #1f2937;
-    --color-text-light: #6b7280;
-    --color-text-muted: #9ca3af;
+    --color-white: #151925;
+    --color-background: #0D0F17;
+    --color-surface: #151925;
+    --color-card: #1C2332;
 
-    --color-border: #e5e7eb;
-    --color-danger: #dc2626;
-    --color-success: #15803d;
+    --color-text: #F4F5F7;
+    --color-text-light: #B8C0D0;
+    --color-text-muted: #828DA3;
 
-    --font-primary: "Inter", sans-serif;
+    --color-border: #30394C;
 
-    --container-width: 1200px;
-    --section-spacing: 110px;
+    --color-danger: #FF5577;
+    --color-success: #B8FF3B;
 
-    --border-radius: 6px;
-    --card-radius: 10px;
+    --gradient-primary: linear-gradient(135deg, #B8FF3B 0%, #A855F7 55%, #00E5FF 100%);
+    --shadow-glow: 0 0 28px rgba(184,255,59,0.18);
 
-    --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.06);
-    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.09);
-    --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.18);
-
-    --transition-fast: 200ms ease;
-    --transition-normal: 300ms ease;
+    /* Compatibility aliases used by older component styles */
+    --card-bg: var(--color-card);
+    --heading-color: var(--color-text);
+    --text-color: var(--color-text-light);
+    --text-dark: var(--color-text);
 }
-
 
 /* Reset */
 
@@ -57,7 +58,7 @@ body {
     line-height: 1.7;
 
     color: var(--color-text);
-    background-color: var(--color-white);
+    background-color: var(--color-background);
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -155,7 +156,7 @@ ol {
 /* Selection */
 
 ::selection {
-    color: var(--color-white);
+    color: #101010;
     background-color: var(--color-primary);
 }
 
